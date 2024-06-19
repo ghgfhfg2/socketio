@@ -268,9 +268,6 @@ siteArray.forEach((site) => {
   onChatConnection(ioName, site);
 });
 
-// http.listen(4000, function () {
-//   console.log("server on!");
-// });
-https.listen(4000, function () {
+http.listen(4000, function () {
   console.log("server on!");
 });
