@@ -1,7 +1,8 @@
+const axios = require("axios");
 const express = require("express");
 const app = express();
-const http = require("http");
-const server = http.createServer(app);
+//const fs = require("fs");
+const http = require("http").createServer(app);
 
 //require("events").EventEmitter.prototype._maxListeners = 100;
 
@@ -270,6 +271,6 @@ app.get("/", (req, res) => {
   res.send("");
 });
 
-server.listen(3000, function () {
-  console.log("server listening on port %s", server.address().port);
+http.listen(3000, function () {
+  console.log("server listening on port %s", http.address().port);
 });
