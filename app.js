@@ -268,5 +268,5 @@ siteArray.forEach((site) => {
 });
 
 https.listen(3000, function () {
-  console.log("server on!");
+  console.log("server listening on port %s", https.address().port);
 });
