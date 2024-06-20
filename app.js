@@ -2,12 +2,12 @@ const axios = require("axios");
 const express = require("express");
 const app = express();
 const fs = require("fs");
-const https = require("https").createServer(app);
+const http = require("http").createServer(app);
 
 require("events").EventEmitter.prototype._maxListeners = 100;
 
 const apiUrl = "https://sydev.pe.kr/game/api/game.php";
-const io = require("socket.io")(https, {
+const io = require("socket.io")(http, {
   cors: {
     origin: "*",
     methods: ["GET", "POST"],
@@ -267,10 +267,10 @@ siteArray.forEach((site) => {
   onChatConnection(ioName, site);
 });
 
-https.get("/", (req, res) => {
+app.get("/", (req, res) => {
   res.send("Hello World!!!");
 });
 
-https.listen(3000, function () {
+http.listen(3000, function () {
   console.log("server listening on port %s", https.address().port);
 });
