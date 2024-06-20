@@ -7,7 +7,7 @@ const https = require("https").createServer(app);
 require("events").EventEmitter.prototype._maxListeners = 100;
 
 const apiUrl = "https://sydev.pe.kr/game/api/game.php";
-const io = require("socket.io")(http, {
+const io = require("socket.io")(https, {
   cors: {
     origin: "*",
     methods: ["GET", "POST"],
