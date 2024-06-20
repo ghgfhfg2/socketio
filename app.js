@@ -272,5 +272,5 @@ app.get("/", (req, res) => {
 });
 
 http.listen(3000, function () {
-  console.log("server listening on port %s", https.address().port);
+  console.log("server listening on port %s", http.address().port);
 });
