@@ -266,7 +266,6 @@ const onChatConnection = (name, site) => {
 
 siteArray.forEach((site) => {
   const ioName = io.of(site.title);
-  console.log("ioName", ioName);
   onChatConnection(ioName, site);
 });
 
