@@ -2,18 +2,16 @@ const express = require("express");
 const app = express();
 const http = require("http");
 const server = http.createServer(app);
-const { Server } = require("socket.io");
-const io = new Server(server);
 
 //require("events").EventEmitter.prototype._maxListeners = 100;
 
 const apiUrl = "https://sydev.pe.kr/game/api/game.php";
-// const io = require("socket.io")(https, {
-//   cors: {
-//     origin: "*",
-//     methods: ["GET", "POST"],
-//   },
-// });
+const io = require("socket.io")(http, {
+  cors: {
+    origin: "*",
+    methods: ["GET", "POST"],
+  },
+});
 
 let gameSiteArray = ["index", "pay"];
 
