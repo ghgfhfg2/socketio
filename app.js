@@ -2,7 +2,7 @@ const axios = require("axios");
 const express = require("express");
 const app = express();
 const fs = require("fs");
-const http = require("http").createServer(app);
+const https = require("https").createServer(app);
 
 require("events").EventEmitter.prototype._maxListeners = 100;
 
@@ -45,7 +45,7 @@ gameSiteArray.forEach((site) => {
     });
   });
 });
-console.log("gameSocketArray", gameSocketArray);
+//console.log("gameSocketArray", gameSocketArray);
 
 const onConnection = async (name, game) => {
   name.on("connection", (socket) => {
@@ -267,6 +267,6 @@ siteArray.forEach((site) => {
   onChatConnection(ioName, site);
 });
 
-http.listen(4000, function () {
+https.listen(4000, function () {
   console.log("server on!!");
 });
