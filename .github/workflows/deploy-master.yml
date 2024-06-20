@@ -27,7 +27,7 @@ jobs:
               env:
                 - name: NODE_ENV
                   value: production
-              ports: "4000"
+              ports: "3000"
               install: npm install
               start: npm start
               buildenv: []
