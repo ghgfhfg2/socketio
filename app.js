@@ -1,10 +1,10 @@
 const axios = require("axios");
 const express = require("express");
 const app = express();
-const fs = require("fs");
+//const fs = require("fs");
 const http = require("http").createServer(app);
 
-require("events").EventEmitter.prototype._maxListeners = 100;
+//require("events").EventEmitter.prototype._maxListeners = 100;
 
 const apiUrl = "https://sydev.pe.kr/game/api/game.php";
 const io = require("socket.io")(http, {
@@ -48,6 +48,8 @@ gameSiteArray.forEach((site) => {
 //console.log("gameSocketArray", gameSocketArray);
 
 const onConnection = async (name, game) => {
+  console.log("name", name);
+  console.log("game", game);
   name.on("connection", (socket) => {
     const gameTitle = game.title;
     const guid = game.guid;
@@ -264,6 +266,7 @@ const onChatConnection = (name, site) => {
 
 siteArray.forEach((site) => {
   const ioName = io.of(site.title);
+  console.log("ioName", ioName);
   onChatConnection(ioName, site);
 });
 
