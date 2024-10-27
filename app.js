@@ -14,7 +14,7 @@ const io = require("socket.io")(http, {
   },
 });
 
-let gameSiteArray = ["sample"];
+let gameSiteArray = ["index", "pay"];
 
 let nameArray = [
   { game: "hole", guid: "1" },
@@ -45,7 +45,7 @@ gameSiteArray.forEach((site) => {
     });
   });
 });
-console.log("gameSocketArray", gameSocketArray);
+//console.log("gameSocketArray", gameSocketArray);
 
 const onConnection = async (name, game) => {
   name.on("connection", (socket) => {
