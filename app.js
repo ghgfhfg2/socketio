@@ -45,7 +45,7 @@ gameSiteArray.forEach((site) => {
     });
   });
 });
-//console.log("gameSocketArray", gameSocketArray);
+console.log("gameSocketArray", gameSocketArray);
 
 const onConnection = async (name, game) => {
   name.on("connection", (socket) => {
