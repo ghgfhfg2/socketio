@@ -14,7 +14,7 @@ const io = require("socket.io")(http, {
   },
 });
 
-let gameSiteArray = ["index", "pay"];
+let gameSiteArray = ["sample"];
 
 let nameArray = [
   { game: "hole", guid: "1" },
